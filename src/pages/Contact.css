@@ -1,0 +1,490 @@
+/* Contact Page */
+.contact-page {
+  padding-top: 80px;
+}
+
+.contact-header {
+  background: linear-gradient(135deg, var(--brown), var(--primary-orange));
+  padding: 4rem 0 3rem;
+  text-align: center;
+  color: var(--white);
+}
+
+/* Contact Section */
+.contact-section {
+  padding: var(--spacing-2xl) 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+.contact-info h2,
+.contact-form-wrapper h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--brown);
+}
+
+/* Info Cards */
+.info-card {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background-color: var(--cream);
+  border-radius: var(--radius-lg);
+  margin-bottom: 1.5rem;
+  transition: all var(--transition-normal);
+}
+
+.info-card:hover {
+  background-color: var(--white);
+  box-shadow: var(--shadow-md);
+  transform: translateX(10px);
+}
+
+.info-icon {
+  width: 60px;
+  height: 60px;
+  background-color: var(--primary-orange);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.info-icon.whatsapp {
+  background-color: #25D366;
+}
+
+.info-content {
+  flex: 1;
+}
+
+.info-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  color: var(--brown);
+}
+
+.info-content p {
+  margin-bottom: 0.25rem;
+  color: var(--charcoal);
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.hours-row span:first-child {
+  font-weight: 600;
+}
+
+.contact-link {
+  display: block;
+  color: var(--primary-orange);
+  text-decoration: none;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  transition: color var(--transition-fast);
+}
+
+.contact-link:hover {
+  color: var(--brown);
+  text-decoration: underline;
+}
+
+/* Contact Form */
+.contact-form {
+  background-color: var(--cream);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--charcoal);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  background-color: var(--white);
+  transition: border-color var(--transition-fast);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-orange);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form .btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* Map Section */
+.map-section {
+  margin-top: 3rem;
+}
+
+.map-container {
+  width: 100%;
+  height: 400px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.map-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--primary-orange), var(--brown));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+}
+
+.map-icon {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.map-placeholder p {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.map-note {
+  font-size: 1rem !important;
+  opacity: 0.9;
+}
+
+/* Payment Section */
+.payment-section {
+  padding: var(--spacing-2xl) 0;
+  margin-top: 3rem;
+}
+
+.payment-note {
+  text-align: center;
+  color: var(--charcoal);
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+.payment-methods {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.payment-category h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--brown);
+  text-align: center;
+  font-weight: 800;
+}
+
+.category-description {
+  text-align: center;
+  color: var(--gray);
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
+}
+
+.payment-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.payment-options.alternative {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Enhanced Payment Card */
+.payment-card.enhanced {
+  background: linear-gradient(to bottom, var(--white), var(--light-cream));
+  padding: 2.5rem 2rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  border: 2px solid transparent;
+}
+
+.payment-card.enhanced:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--primary-orange);
+}
+
+.payment-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.payment-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.payment-icon.mtn {
+  color: #FFCC00;
+}
+
+.payment-icon.vodafone {
+  color: #E60000;
+}
+
+.payment-icon.airteltigo {
+  color: #ED1C24;
+}
+
+.payment-icon.cash {
+  color: var(--green);
+}
+
+.payment-icon.bank {
+  color: var(--dark-brown);
+}
+
+.payment-card h4 {
+  font-size: 1.3rem;
+  margin-bottom: 0;
+  color: var(--brown);
+  font-weight: 700;
+}
+
+.payment-number {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--primary-orange);
+  font-family: var(--font-heading);
+  margin: 1rem 0;
+  letter-spacing: 2px;
+}
+
+/* Payment Actions */
+.payment-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+  justify-content: center;
+}
+
+.action-btn {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--primary-orange);
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.action-btn.copy {
+  background-color: var(--white);
+  color: var(--primary-orange);
+}
+
+.action-btn.copy:hover {
+  background-color: var(--primary-orange);
+  color: var(--white);
+  transform: scale(1.05);
+}
+
+.action-btn.qr {
+  background-color: var(--primary-orange);
+  color: var(--white);
+}
+
+.action-btn.qr:hover {
+  background-color: var(--dark-orange);
+  transform: scale(1.05);
+}
+
+/* QR Code Container */
+.qr-container {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background-color: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.qr-instruction {
+  margin-top: 1rem;
+  color: var(--gray);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.quick-pay-link {
+  display: block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--green);
+  color: var(--white);
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all var(--transition-normal);
+  font-size: 0.9rem;
+}
+
+.quick-pay-link:hover {
+  background-color: var(--dark-brown);
+  transform: scale(1.05);
+  color: var(--white);
+}
+
+/* Simple Payment Cards */
+.payment-card.simple {
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+}
+
+.payment-card.simple:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.payment-details {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  text-align: left;
+}
+
+.payment-details li {
+  padding: 0.5rem 0;
+  color: var(--charcoal);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.payment-details li::before {
+  content: '✓';
+  color: var(--green);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.payment-security {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background-color: rgba(34, 139, 34, 0.1);
+  border-left: 4px solid var(--green);
+  border-radius: var(--radius-md);
+}
+
+.payment-security p {
+  margin: 0;
+  color: var(--charcoal);
+  line-height: 1.6;
+}
+
+.payment-security strong {
+  color: var(--green);
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .payment-options {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .map-container {
+    height: 300px;
+  }
+
+  .info-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .info-icon {
+    margin: 0 auto;
+  }
+
+  .hours-row {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form {
+    padding: 1.5rem;
+  }
+
+  .payment-card {
+    padding: 1.5rem;
+  }
+
+  .map-icon {
+    font-size: 3.5rem;
+  }
+
+  .map-placeholder p {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+  }
+}
