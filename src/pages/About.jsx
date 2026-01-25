@@ -52,7 +52,7 @@ const About = () => {
               <p className="section-subtitle">Our Story</p>
               <h2 className="section-title">A Legacy of Flavor</h2>
               <p className="story-paragraph">
-                For over a decade, Tilapia Joint has been serving authentic Ghanaian smoked tilapia
+                For over a decade, Akopia has been serving authentic Ghanaian smoked tilapia
                 to our community. What started as a small family venture has grown into a beloved
                 local institution, known for maintaining the traditional methods that make our
                 tilapia truly special.

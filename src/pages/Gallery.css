@@ -104,6 +104,17 @@
   box-shadow: var(--shadow-xl);
 }
 
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.gallery-item:hover .gallery-image {
+  transform: scale(1.1);
+}
+
 .gallery-placeholder {
   width: 100%;
   height: 100%;

@@ -1,6 +1,6 @@
-# Tilapia Joint Website
+# Akopia Website
 
-A modern, responsive website for a Ghanaian smoked tilapia and banku restaurant, built with React and Vite.
+A modern, responsive website for Akopia - a Ghanaian smoked tilapia and banku restaurant, built with React and Vite.
 
 ## Features
 
@@ -39,7 +39,7 @@ A modern, responsive website for a Ghanaian smoked tilapia and banku restaurant,
 
 1. Navigate to the project directory:
 ```bash
-cd tilapia-website
+cd akopia-website
 ```
 
 2. Install dependencies:
@@ -68,7 +68,7 @@ The production-ready files will be in the `dist` directory.
 ## Project Structure
 
 ```
-tilapia-website/
+akopia-website/
 ├── src/
 │   ├── components/
 │   │   ├── Navbar.jsx
@@ -199,7 +199,7 @@ netlify deploy --prod --dir=dist
 
 ## License
 
-This project is created for Tilapia Joint restaurant.
+This project is created for Akopia restaurant.
 
 ## Support
 

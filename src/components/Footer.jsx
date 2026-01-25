@@ -32,7 +32,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-section">
-          <h3 className="footer-title">Tilapia Joint</h3>
+          <h3 className="footer-title">Akopia</h3>
           <p className="footer-tagline">Fresh tilapia smoked daily</p>
           <p className="footer-description">
             Experience authentic Ghanaian smoked tilapia with traditional banku,
@@ -108,7 +108,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-bottom">
-        <p>&copy; {currentYear} Tilapia Joint. All rights reserved.</p>
+        <p>&copy; {currentYear} Akopia. All rights reserved.</p>
         <p>Made with ❤️ in Ghana</p>
       </div>
     </footer>

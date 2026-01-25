@@ -223,6 +223,18 @@
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-lg);
+  transition: transform var(--transition-normal);
+}
+
+.signature-image:hover {
+  transform: scale(1.02);
+}
+
+.signature-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .image-placeholder {

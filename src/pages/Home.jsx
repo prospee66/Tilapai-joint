@@ -104,10 +104,11 @@ const Home = () => {
         <div className="container">
           <div className="signature-content">
             <div className="signature-image">
-              <div className="image-placeholder">
-                <FaFish className="placeholder-icon" />
-                <p>Delicious Smoked Tilapia with Banku</p>
-              </div>
+              <img
+                src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=800&h=600&fit=crop"
+                alt="Delicious Smoked Tilapia with Banku"
+                className="signature-img"
+              />
             </div>
             <div className="signature-info">
               <p className="section-subtitle">Our Specialty</p>
