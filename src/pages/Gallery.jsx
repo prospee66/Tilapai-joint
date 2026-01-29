@@ -32,18 +32,18 @@ const Gallery = () => {
   };
 
   const galleryItems = [
-    { id: 1, category: 'process', title: 'Fresh Daily Catch', description: 'Premium quality tilapia on ice - Always fresh, never frozen', image: '/images/gallery/fresh-tilapia-ice.jpg' },
-    { id: 2, category: 'process', title: 'Quality Selection', description: 'Hand-picked tilapia for perfect texture and taste', image: '/images/gallery/single-tilapia.jpg' },
-    { id: 3, category: 'food', title: 'Perfectly Grilled Tilapia', description: 'Charcoal-grilled to perfection with authentic Ghanaian spices', image: '/images/gallery/grilled-tilapia-plate.jpg' },
-    { id: 4, category: 'process', title: 'Charcoal Grilling Process', description: 'Traditional grilling technique for that smoky flavor', image: '/images/gallery/tilapia-on-grill.jpg' },
-    { id: 5, category: 'food', title: 'Crispy Fried Tilapia', description: 'Golden-brown perfection served with fresh vegetables', image: '/images/gallery/fried-tilapia.jpg' },
-    { id: 6, category: 'food', title: 'Banku & Smoked Tilapia', description: 'Our signature dish - Traditional banku with perfectly smoked tilapia', image: 'https://images.unsplash.com/photo-1606755962773-d324e0a12ab6?w=500&h=500&fit=crop' },
-    { id: 7, category: 'food', title: 'Family Size Platter', description: 'Large tilapia perfect for sharing with loved ones', image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=500&h=500&fit=crop' },
-    { id: 8, category: 'process', title: 'Fresh Fish Preparation', description: 'Expertly cleaned and prepared daily', image: 'https://images.unsplash.com/photo-1580959375944-357954b52c7e?w=500&h=500&fit=crop' },
-    { id: 9, category: 'food', title: 'Tilapia with Pepper Sauce', description: 'Served with our homemade shito pepper', image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500&h=500&fit=crop' },
-    { id: 10, category: 'process', title: 'Making Fresh Banku', description: 'Traditional corn dough prepared the authentic way', image: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=500&h=500&fit=crop' },
-    { id: 11, category: 'customers', title: 'Enjoying Fresh Tilapia', description: 'Happy customers savoring our signature dishes', image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=500&h=500&fit=crop' },
-    { id: 12, category: 'customers', title: 'Family Dining Experience', description: 'Creating memories over delicious tilapia meals', image: 'https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=500&h=500&fit=crop' }
+    { id: 1, category: 'process', title: 'Fresh Daily Catch', description: 'Premium quality tilapia on ice - Always fresh, never frozen', image: 'https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?w=800&h=800&fit=crop&q=80' },
+    { id: 2, category: 'process', title: 'Quality Selection', description: 'Hand-picked tilapia for perfect texture and taste', image: 'https://images.unsplash.com/photo-1544943910-4c1dc44aab44?w=800&h=800&fit=crop&q=80' },
+    { id: 3, category: 'food', title: 'Perfectly Grilled Tilapia', description: 'Charcoal-grilled to perfection with authentic Ghanaian spices', image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=800&h=800&fit=crop&q=80' },
+    { id: 4, category: 'process', title: 'Charcoal Grilling Process', description: 'Traditional grilling technique for that smoky flavor', image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&h=800&fit=crop&q=80' },
+    { id: 5, category: 'food', title: 'Crispy Fried Tilapia', description: 'Golden-brown perfection served with fresh vegetables', image: 'https://images.unsplash.com/photo-1580959375944-357954b52c7e?w=800&h=800&fit=crop&q=80' },
+    { id: 6, category: 'food', title: 'Banku & Smoked Tilapia', description: 'Our signature dish - Traditional banku with perfectly smoked tilapia', image: 'https://images.unsplash.com/photo-1606755962773-d324e0a12ab6?w=800&h=800&fit=crop&q=80' },
+    { id: 7, category: 'food', title: 'Tilapia with Banku', description: 'Traditional Ghanaian combination', image: 'https://images.unsplash.com/photo-1604152135912-04a022e23696?w=800&h=800&fit=crop&q=80' },
+    { id: 8, category: 'food', title: 'Fresh Banku & Grilled Tilapia', description: 'Served hot with pepper sauce', image: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=800&h=800&fit=crop&q=80' },
+    { id: 9, category: 'food', title: 'Tilapia & Banku Platter', description: 'Complete meal with shito pepper', image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&h=800&fit=crop&q=80' },
+    { id: 10, category: 'process', title: 'Making Fresh Banku', description: 'Traditional corn dough prepared the authentic way', image: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&h=800&fit=crop&q=80' },
+    { id: 11, category: 'customers', title: 'Enjoying Fresh Tilapia', description: 'Happy customers savoring our signature dishes', image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&h=800&fit=crop&q=80' },
+    { id: 12, category: 'customers', title: 'Family Dining Experience', description: 'Creating memories over delicious tilapia meals', image: 'https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=800&h=800&fit=crop&q=80' }
   ];
 
   const categories = [
