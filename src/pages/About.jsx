@@ -25,12 +25,6 @@ const About = () => {
     }
   ];
 
-  const stats = [
-    { number: '10+', label: 'Years Experience' },
-    { number: '1000+', label: 'Happy Customers' },
-    { number: '100%', label: 'Fresh Daily' },
-    { number: '5★', label: 'Customer Rating' }
-  ];
 
   return (
     <div className="about-page">
@@ -74,20 +68,6 @@ const About = () => {
                 <p>Our Team at Work</p>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats */}
-      <section className="stats-section bg-cream">
-        <div className="container">
-          <div className="stats-grid">
-            {stats.map((stat, index) => (
-              <div key={index} className="stat-item">
-                <h3 className="stat-number">{stat.number}</h3>
-                <p className="stat-label">{stat.label}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>

@@ -1,6 +1,3 @@
-// PAYSTACK INTEGRATED VERSION
-// Replace Contact.jsx with this code when you have your Paystack API key
-
 import { useState } from 'react';
 import {
   FaMapMarkerAlt,
@@ -12,7 +9,6 @@ import {
   FaShieldAlt,
   FaCheckCircle
 } from 'react-icons/fa';
-import { PaystackButton } from 'react-paystack';
 import './Contact.css';
 
 const Contact = () => {
@@ -24,15 +20,11 @@ const Contact = () => {
   });
 
   const [paymentData, setPaymentData] = useState({
-    email: '',
+    provider: 'mtn',
+    phoneNumber: '',
     amount: '',
-    name: '',
-    phone: ''
+    name: ''
   });
-
-  // ⚠️ IMPORTANT: Replace with your actual Paystack public key
-  // Get it from: https://dashboard.paystack.com/#/settings/developers
-  const publicKey = 'pk_test_21615babab12fd85f67270ec8b1cf724b7f92d78';
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -55,55 +47,18 @@ const Contact = () => {
     });
   };
 
-  // Paystack configuration for Mobile Money
-  const paystackConfig = {
-    reference: new Date().getTime().toString(),
-    email: paymentData.email,
-    amount: paymentData.amount * 100, // Convert to pesewas (smallest unit)
-    publicKey: publicKey,
-    metadata: {
-      name: paymentData.name,
-      phone: paymentData.phone,
-      custom_fields: [
-        {
-          display_name: "Customer Name",
-          variable_name: "customer_name",
-          value: paymentData.name
-        },
-        {
-          display_name: "Phone Number",
-          variable_name: "phone_number",
-          value: paymentData.phone
-        }
-      ]
-    }
-    // Temporarily allow all payment methods for testing
-    // Once Mobile Money is activated in Paystack dashboard, uncomment line below:
-    // channels: ['mobile_money']
+  const handleProviderSelect = (provider) => {
+    setPaymentData({
+      ...paymentData,
+      provider: provider
+    });
   };
 
-  // Payment success handler
-  const handlePaystackSuccessAction = (reference) => {
-    console.log('Payment successful!', reference);
-    alert(`✅ Payment Successful!\n\nReference: ${reference.reference}\nYou will receive a confirmation SMS shortly.`);
-
-    // Reset form
-    setPaymentData({ email: '', amount: '', name: '', phone: '' });
-
-    // Optional: Send payment confirmation to your backend
-    // sendToBackend(reference);
-  };
-
-  // Payment close handler (when user closes payment window)
-  const handlePaystackCloseAction = () => {
-    alert('Payment window closed. Your payment was not completed.');
-  };
-
-  const componentProps = {
-    ...paystackConfig,
-    text: 'Pay Now',
-    onSuccess: (reference) => handlePaystackSuccessAction(reference),
-    onClose: handlePaystackCloseAction,
+  const handlePaymentSubmit = (e) => {
+    e.preventDefault();
+    console.log('Payment submitted:', paymentData);
+    alert(`Payment request sent!\n\nProvider: ${paymentData.provider.toUpperCase()}\nPhone: ${paymentData.phoneNumber}\nAmount: GHS ${paymentData.amount}\n\nYou will receive a prompt on your phone to complete the payment.`);
+    setPaymentData({ provider: 'mtn', phoneNumber: '', amount: '', name: '' });
   };
 
   return (
@@ -263,28 +218,55 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* REAL PAYSTACK PAYMENT SECTION */}
+      {/* Payment Section */}
       <section className="payment-section bg-cream">
         <div className="container">
           <div className="section-header">
             <p className="section-subtitle">Secure Payment</p>
-            <h2 className="section-title">Make a Payment</h2>
+            <h2 className="section-title">Mobile Money Payment</h2>
             <p className="payment-note">
-              Pay securely with Mobile Money, Card, or Bank Transfer via Paystack
+              Pay securely with MTN, Vodafone, or AirtelTigo Mobile Money
             </p>
           </div>
 
           <div className="momo-payment-container">
-            <form className="momo-payment-form">
+            <form className="momo-payment-form" onSubmit={handlePaymentSubmit}>
               <h3>
-                <FaMobileAlt /> Payment Details
+                <FaMobileAlt /> Mobile Money Details
               </h3>
 
               <div className="form-group">
-                <label htmlFor="payment-name">Full Name *</label>
+                <label>Select Provider *</label>
+                <div className="provider-selection">
+                  <button
+                    type="button"
+                    className={`provider-btn ${paymentData.provider === 'mtn' ? 'active' : ''}`}
+                    onClick={() => handleProviderSelect('mtn')}
+                  >
+                    MTN
+                  </button>
+                  <button
+                    type="button"
+                    className={`provider-btn ${paymentData.provider === 'vodafone' ? 'active' : ''}`}
+                    onClick={() => handleProviderSelect('vodafone')}
+                  >
+                    Vodafone
+                  </button>
+                  <button
+                    type="button"
+                    className={`provider-btn ${paymentData.provider === 'airteltigo' ? 'active' : ''}`}
+                    onClick={() => handleProviderSelect('airteltigo')}
+                  >
+                    AirtelTigo
+                  </button>
+                </div>
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="momo-name">Full Name *</label>
                 <input
                   type="text"
-                  id="payment-name"
+                  id="momo-name"
                   name="name"
                   value={paymentData.name}
                   onChange={handlePaymentChange}
@@ -294,36 +276,26 @@ const Contact = () => {
               </div>
 
               <div className="form-group">
-                <label htmlFor="payment-email">Email Address *</label>
-                <input
-                  type="email"
-                  id="payment-email"
-                  name="email"
-                  value={paymentData.email}
-                  onChange={handlePaymentChange}
-                  placeholder="your@email.com"
-                  required
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="payment-phone">Phone Number *</label>
+                <label htmlFor="momo-number">Mobile Money Number *</label>
                 <input
                   type="tel"
-                  id="payment-phone"
-                  name="phone"
-                  value={paymentData.phone}
+                  id="momo-number"
+                  name="phoneNumber"
+                  value={paymentData.phoneNumber}
                   onChange={handlePaymentChange}
-                  placeholder="024XXXXXXX"
+                  placeholder="0XX XXX XXXX"
+                  pattern="[0-9]{10}"
+                  maxLength="10"
                   required
                 />
+                <small>Enter 10-digit phone number</small>
               </div>
 
               <div className="form-group">
-                <label htmlFor="payment-amount">Amount (GHS) *</label>
+                <label htmlFor="momo-amount">Amount (GHS) *</label>
                 <input
                   type="number"
-                  id="payment-amount"
+                  id="momo-amount"
                   name="amount"
                   value={paymentData.amount}
                   onChange={handlePaymentChange}
@@ -334,48 +306,44 @@ const Contact = () => {
                 />
               </div>
 
-              {paymentData.email && paymentData.amount && paymentData.name && paymentData.phone ? (
-                <PaystackButton className="btn btn-primary btn-momo-submit" {...componentProps} />
-              ) : (
-                <button type="button" className="btn btn-primary btn-momo-submit" disabled>
-                  <FaMobileAlt /> Fill all fields to continue
-                </button>
-              )}
+              <button type="submit" className="btn btn-primary btn-momo-submit">
+                <FaMobileAlt /> Send Payment Request
+              </button>
 
               <p className="payment-info">
-                <FaShieldAlt /> Secure payment powered by Paystack. Choose your preferred payment method.
+                <FaShieldAlt /> You will receive a prompt on your phone to authorize the payment
               </p>
             </form>
 
             <div className="payment-benefits">
-              <h3>Why Pay with Paystack?</h3>
+              <h3>Why Mobile Money?</h3>
               <ul className="benefits-list">
                 <li>
                   <FaCheckCircle className="check-icon" />
                   <div>
-                    <strong>Multiple Payment Options</strong>
-                    <p>Pay with Mobile Money, Debit/Credit Card, or Bank Transfer</p>
+                    <strong>Fast & Convenient</strong>
+                    <p>Pay directly from your mobile money wallet in seconds</p>
                   </div>
                 </li>
                 <li>
                   <FaCheckCircle className="check-icon" />
                   <div>
-                    <strong>Instant Payment</strong>
-                    <p>Get a prompt on your phone to approve payment instantly</p>
+                    <strong>Secure Transactions</strong>
+                    <p>Bank-level security with PIN protection</p>
                   </div>
                 </li>
                 <li>
                   <FaCheckCircle className="check-icon" />
                   <div>
-                    <strong>100% Secure</strong>
-                    <p>Bank-level encryption and PCI-DSS compliance</p>
+                    <strong>Instant Confirmation</strong>
+                    <p>Get immediate SMS confirmation of your payment</p>
                   </div>
                 </li>
                 <li>
                   <FaCheckCircle className="check-icon" />
                   <div>
-                    <strong>SMS Confirmation</strong>
-                    <p>Receive instant confirmation via SMS and email</p>
+                    <strong>All Networks Supported</strong>
+                    <p>Works with MTN, Vodafone, and AirtelTigo</p>
                   </div>
                 </li>
               </ul>

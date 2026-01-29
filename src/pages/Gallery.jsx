@@ -32,18 +32,18 @@ const Gallery = () => {
   };
 
   const galleryItems = [
-    { id: 1, category: 'food', title: 'Smoked Tilapia with Banku', description: 'Our signature dish', image: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=500&h=500&fit=crop' },
-    { id: 2, category: 'process', title: 'Traditional Smoking Process', description: 'Charcoal smoking', image: 'https://images.unsplash.com/photo-1600891964092-4316c288032e?w=500&h=500&fit=crop' },
-    { id: 3, category: 'food', title: 'Fresh Pepper Sauce', description: 'Homemade shito', image: 'https://images.unsplash.com/photo-1596040033229-a0b40e356b9e?w=500&h=500&fit=crop' },
-    { id: 4, category: 'customers', title: 'Happy Customers', description: 'Enjoying their meal', image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500&h=500&fit=crop' },
-    { id: 5, category: 'process', title: 'Preparing Banku', description: 'Traditional method', image: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=500&h=500&fit=crop' },
-    { id: 6, category: 'food', title: 'Extra-Large Portion', description: 'Family size', image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=500&h=500&fit=crop' },
-    { id: 7, category: 'process', title: 'Fish Selection', description: 'Fresh daily', image: 'https://images.unsplash.com/photo-1574781330855-d0db8cc6a79c?w=500&h=500&fit=crop' },
-    { id: 8, category: 'customers', title: 'Family Dining', description: 'Great atmosphere', image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=500&h=500&fit=crop' },
-    { id: 9, category: 'food', title: 'Complete Meal', description: 'Fish, banku & pepper', image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500&h=500&fit=crop' },
-    { id: 10, category: 'process', title: 'Grilling Setup', description: 'Charcoal preparation', image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500&h=500&fit=crop' },
-    { id: 11, category: 'food', title: 'Medium Portion', description: 'Perfect for one', image: 'https://images.unsplash.com/photo-1580959375944-57c98b3c5ec0?w=500&h=500&fit=crop' },
-    { id: 12, category: 'customers', title: 'Weekend Crowd', description: 'Busy times', image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=500&h=500&fit=crop' }
+    { id: 1, category: 'food', title: 'Banku & Smoked Tilapia', description: 'Our signature dish - Fresh banku with perfectly smoked tilapia', image: 'https://images.unsplash.com/photo-1606755962773-d324e0a12ab6?w=500&h=500&fit=crop' },
+    { id: 2, category: 'food', title: 'Smoked Tilapia with Banku', description: 'Traditional Ghanaian combination', image: 'https://images.unsplash.com/photo-1604152135912-04a022e23696?w=500&h=500&fit=crop' },
+    { id: 3, category: 'food', title: 'Fresh Banku & Grilled Tilapia', description: 'Served hot with pepper sauce', image: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=500&h=500&fit=crop' },
+    { id: 4, category: 'process', title: 'Smoking Tilapia', description: 'Traditional charcoal smoking process', image: 'https://images.unsplash.com/photo-1600891964092-4316c288032e?w=500&h=500&fit=crop' },
+    { id: 5, category: 'food', title: 'Tilapia & Banku Platter', description: 'Complete meal with shito pepper', image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500&h=500&fit=crop' },
+    { id: 6, category: 'process', title: 'Preparing Fresh Tilapia', description: 'Daily fish preparation', image: 'https://images.unsplash.com/photo-1580959375944-357954b52c7e?w=500&h=500&fit=crop' },
+    { id: 7, category: 'food', title: 'Banku with Large Tilapia', description: 'Family size portion', image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=500&h=500&fit=crop' },
+    { id: 8, category: 'process', title: 'Charcoal Grilling', description: 'Grilling fresh tilapia on charcoal', image: 'https://images.unsplash.com/photo-1574781330855-d0db8cc6a79c?w=500&h=500&fit=crop' },
+    { id: 9, category: 'food', title: 'Smoked Fish & Banku', description: 'Authentic Ghanaian flavors', image: 'https://images.unsplash.com/photo-1599921841143-819065a55cc6?w=500&h=500&fit=crop' },
+    { id: 10, category: 'process', title: 'Making Fresh Banku', description: 'Traditional corn dough preparation', image: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=500&h=500&fit=crop' },
+    { id: 11, category: 'customers', title: 'Enjoying Banku & Tilapia', description: 'Happy customers at Akopia', image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=500&h=500&fit=crop' },
+    { id: 12, category: 'customers', title: 'Family Meal Time', description: 'Sharing banku and tilapia together', image: 'https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=500&h=500&fit=crop' }
   ];
 
   const categories = [

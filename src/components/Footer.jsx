@@ -59,15 +59,15 @@ const Footer = () => {
             <div className="hours-item">
               <FaClock className="hours-icon" />
               <div>
-                <p className="hours-days">Monday - Friday</p>
-                <p className="hours-time">10:00 AM - 9:00 PM</p>
+                <p className="hours-days">Monday</p>
+                <p className="hours-time">Closed</p>
               </div>
             </div>
             <div className="hours-item">
               <FaClock className="hours-icon" />
               <div>
-                <p className="hours-days">Saturday - Sunday</p>
-                <p className="hours-time">11:00 AM - 10:00 PM</p>
+                <p className="hours-days">Tuesday - Sunday</p>
+                <p className="hours-time">4:00 PM - 11:00 PM</p>
               </div>
             </div>
           </div>
@@ -86,7 +86,7 @@ const Footer = () => {
             </a>
             <div className="contact-item">
               <FaMapMarkerAlt className="contact-icon" />
-              <span>Accra, Ghana</span>
+              <span>Pokuase-Odumase, Accra</span>
             </div>
           </div>
 

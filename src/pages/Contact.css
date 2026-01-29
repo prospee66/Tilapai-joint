@@ -213,11 +213,14 @@
 }
 
 .payment-category h3 {
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
-  color: var(--brown);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-orange);
   text-align: center;
-  font-weight: 800;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .category-description {
@@ -420,6 +423,149 @@
   font-size: 1.2rem;
 }
 
+/* Mobile Money Payment Section */
+.momo-payment-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 3rem;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.momo-payment-form {
+  background: var(--white);
+  padding: 3rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 3px solid var(--beige);
+}
+
+.momo-payment-form h3 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--dark-brown);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--beige);
+}
+
+.provider-selection {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.provider-btn {
+  padding: 1.2rem;
+  border: 3px solid var(--beige);
+  background: var(--white);
+  border-radius: var(--radius-md);
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.provider-btn:hover {
+  border-color: var(--primary-orange);
+  background: var(--cream);
+  transform: translateY(-2px);
+}
+
+.provider-btn.active {
+  border-color: var(--primary-orange);
+  background: var(--gradient-primary);
+  color: var(--white);
+  box-shadow: 0 4px 12px rgba(210, 105, 30, 0.3);
+}
+
+.momo-payment-form small {
+  display: block;
+  margin-top: 0.5rem;
+  color: var(--gray);
+  font-size: 0.9rem;
+}
+
+.btn-momo-submit {
+  width: 100%;
+  padding: 1.5rem;
+  font-size: 1.3rem;
+  margin-top: 1rem;
+}
+
+.payment-info {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: var(--gray);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: var(--cream);
+  border-radius: var(--radius-md);
+}
+
+.payment-benefits {
+  background: linear-gradient(to bottom, var(--cream), var(--light-cream));
+  padding: 3rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 3px solid var(--beige);
+}
+
+.payment-benefits h3 {
+  color: var(--dark-brown);
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.benefits-list li {
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+}
+
+.check-icon {
+  color: var(--green);
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.benefits-list strong {
+  display: block;
+  color: var(--dark-brown);
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.benefits-list p {
+  color: var(--charcoal);
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
 .payment-security {
   margin-top: 3rem;
   padding: 1.5rem;
@@ -448,6 +594,16 @@
   .payment-options {
     grid-template-columns: 1fr;
   }
+
+  .momo-payment-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .momo-payment-form,
+  .payment-benefits {
+    padding: 2rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -470,6 +626,16 @@
   }
 }
 
+@media (max-width: 768px) {
+  .momo-payment-container {
+    grid-template-columns: 1fr;
+  }
+
+  .provider-selection {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 480px) {
   .contact-form {
     padding: 1.5rem;
@@ -477,6 +643,29 @@
 
   .payment-card {
     padding: 1.5rem;
+  }
+
+  .momo-payment-form,
+  .payment-benefits {
+    padding: 1.5rem;
+  }
+
+  .benefits-list li {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .check-icon {
+    margin: 0 auto 0.5rem;
+  }
+
+  .provider-selection {
+    grid-template-columns: 1fr;
+  }
+
+  .provider-btn {
+    padding: 1rem;
+    font-size: 1rem;
   }
 
   .map-icon {

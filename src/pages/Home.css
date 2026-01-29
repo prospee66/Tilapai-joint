@@ -186,12 +186,12 @@
   font-size: 2.2rem;
   color: var(--white);
   transition: all var(--transition-normal);
-  box-shadow: 0 4px 20px rgba(255, 107, 53, 0.3);
+  box-shadow: 0 4px 20px rgba(210, 105, 30, 0.4);
 }
 
 .feature-card:hover .feature-icon {
   transform: scale(1.15) rotate(360deg);
-  box-shadow: 0 6px 30px rgba(255, 107, 53, 0.5);
+  box-shadow: 0 6px 30px rgba(210, 105, 30, 0.5);
 }
 
 .feature-title {
@@ -397,13 +397,13 @@
   font-size: 1.8rem;
   font-weight: 900;
   font-family: var(--font-heading);
-  box-shadow: 0 4px 20px rgba(255, 107, 53, 0.4);
+  box-shadow: 0 4px 20px rgba(210, 105, 30, 0.45);
   transition: all var(--transition-normal);
 }
 
 .step-card:hover .step-number {
   transform: scale(1.1);
-  box-shadow: 0 6px 30px rgba(255, 107, 53, 0.6);
+  box-shadow: 0 6px 30px rgba(210, 105, 30, 0.6);
 }
 
 .step-icon {
@@ -418,12 +418,12 @@
   font-size: 3rem;
   color: var(--white);
   transition: all var(--transition-normal);
-  box-shadow: 0 4px 15px rgba(107, 68, 35, 0.3);
+  box-shadow: 0 4px 15px rgba(160, 82, 45, 0.3);
 }
 
 .step-card:hover .step-icon {
   transform: scale(1.1);
-  box-shadow: 0 6px 25px rgba(107, 68, 35, 0.5);
+  box-shadow: 0 6px 25px rgba(160, 82, 45, 0.5);
 }
 
 .step-title {
@@ -453,7 +453,7 @@
   left: -10%;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(210, 105, 30, 0.15) 0%, transparent 70%);
   border-radius: 50%;
 }
 
@@ -464,7 +464,7 @@
   right: -10%;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(107, 68, 35, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(160, 82, 45, 0.15) 0%, transparent 70%);
   border-radius: 50%;
 }
 

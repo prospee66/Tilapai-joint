@@ -8,36 +8,51 @@
   box-sizing: border-box;
 }
 
-/* CSS Variables - Enhanced Color Palette */
+/* CSS Variables - Warm Grilled & Smoked Food Palette */
 :root {
-  /* Primary Colors - More Vibrant */
-  --primary-orange: #FF6B35;
-  --secondary-orange: #FF8C42;
-  --dark-orange: #E85D04;
+  /* Primary Colors - Rich Burnt Orange & Golden Brown */
+  --primary-orange: #D2691E;
+  --secondary-orange: #DAA520;
+  --dark-orange: #8B4513;
 
-  /* Accent Colors */
-  --brown: #6B4423;
-  --dark-brown: #3E2723;
-  --light-brown: #A0826D;
+  /* Legacy variables for compatibility */
+  --primary-teal: #D2691E;
+  --secondary-teal: #DAA520;
+  --dark-teal: #8B4513;
+
+  /* Coral/Salmon Accents */
+  --coral: #E07A5F;
+  --light-coral: #F2A58F;
+  --dark-coral: #C85A3F;
+
+  /* Gold Accents - Warm Amber */
+  --gold: #F4A460;
+  --light-gold: #FFD8A8;
+
+  /* Brown/Earth Tones - Smoky & Rich */
+  --brown: #A0522D;
+  --dark-brown: #6B4423;
+  --light-brown: #D2B48C;
 
   /* Background Colors */
-  --cream: #FFF8E7;
-  --light-cream: #FFFDF7;
-  --beige: #F4E4C1;
+  --cream: #FFF8DC;
+  --light-cream: #FFFEF0;
+  --beige: #F5DEB3;
 
   /* Text Colors */
-  --charcoal: #2C2C2C;
-  --gray: #6C757D;
+  --charcoal: #2C1810;
+  --gray: #6B5D54;
 
-  /* Accent Colors */
-  --green: #2ECC71;
-  --red: #E74C3C;
-  --yellow: #F39C12;
+  /* Additional Accent Colors */
+  --green: #76A963;
+  --red: #C8553D;
+  --yellow: #F4B942;
   --white: #FFFFFF;
 
-  /* Gradient */
-  --gradient-primary: linear-gradient(135deg, #FF6B35 0%, #FF8C42 100%);
-  --gradient-dark: linear-gradient(135deg, #6B4423 0%, #3E2723 100%);
+  /* Gradients - Warm & Appetizing */
+  --gradient-primary: linear-gradient(135deg, #D2691E 0%, #DAA520 100%);
+  --gradient-coral: linear-gradient(135deg, #E07A5F 0%, #F4A460 100%);
+  --gradient-dark: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
 
   /* Typography */
   --font-heading: 'Poppins', sans-serif;
@@ -123,7 +138,7 @@ a {
 }
 
 a:hover {
-  color: var(--brown);
+  color: var(--secondary-orange);
 }
 
 /* Container */
@@ -162,26 +177,26 @@ a:hover {
 .btn-primary {
   background: var(--gradient-primary);
   color: var(--white);
-  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+  box-shadow: 0 4px 15px rgba(210, 105, 30, 0.4);
 }
 
 .btn-primary:hover {
-  background: var(--gradient-dark);
+  background: var(--gradient-coral);
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.5);
+  box-shadow: 0 6px 20px rgba(224, 122, 95, 0.5);
   color: var(--white);
 }
 
 .btn-secondary {
   background: var(--gradient-dark);
   color: var(--white);
-  box-shadow: 0 4px 15px rgba(107, 68, 35, 0.4);
+  box-shadow: 0 4px 15px rgba(139, 69, 19, 0.4);
 }
 
 .btn-secondary:hover {
-  background: var(--gradient-primary);
+  background: var(--gradient-coral);
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(107, 68, 35, 0.5);
+  box-shadow: 0 6px 20px rgba(160, 82, 45, 0.5);
   color: var(--white);
 }
 
@@ -271,6 +286,23 @@ section {
 }
 
 /* Responsive Spacing */
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .container {
+    padding: 0 var(--spacing-md);
+  }
+
+  section {
+    padding: 3rem 0;
+  }
+
+  .btn {
+    padding: 0.9rem 1.8rem;
+    font-size: 1rem;
+  }
+}
+
+/* Mobile and Small Tablet (max-width: 768px) */
 @media (max-width: 768px) {
   :root {
     --spacing-xl: 2rem;
@@ -283,6 +315,44 @@ section {
 
   .container {
     padding: 0 var(--spacing-sm);
+  }
+
+  .btn {
+    padding: 0.85rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+  }
+}
+
+/* Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .btn {
+    padding: 0.8rem 1.3rem;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
   }
 }
 
