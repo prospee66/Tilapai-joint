@@ -1,7 +1,8 @@
 // PAYSTACK INTEGRATED VERSION
 // Replace Contact.jsx with this code when you have your Paystack API key
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import {
   FaMapMarkerAlt,
   FaPhone,
@@ -16,6 +17,9 @@ import { PaystackButton } from 'react-paystack';
 import './Contact.css';
 
 const Contact = () => {
+  const location = useLocation();
+  const orderData = location.state || {};
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -25,10 +29,20 @@ const Contact = () => {
 
   const [paymentData, setPaymentData] = useState({
     email: '',
-    amount: '',
+    amount: orderData.fishPrice || '',
     name: '',
     phone: ''
   });
+
+  // Pre-fill amount when coming from Gallery
+  useEffect(() => {
+    if (orderData.fishPrice) {
+      setPaymentData(prev => ({
+        ...prev,
+        amount: orderData.fishPrice
+      }));
+    }
+  }, [orderData.fishPrice]);
 
   // ⚠️ IMPORTANT: Replace with your actual Paystack public key
   // Get it from: https://dashboard.paystack.com/#/settings/developers
@@ -85,7 +99,16 @@ const Contact = () => {
   // Payment success handler
   const handlePaystackSuccessAction = (reference) => {
     console.log('Payment successful!', reference);
-    alert(`✅ Payment Successful!\n\nReference: ${reference.reference}\nYou will receive a confirmation SMS shortly.`);
+
+    let successMessage = `✅ Payment Successful!\n\nReference: ${reference.reference}`;
+
+    if (orderData.fishSize) {
+      successMessage += `\n\nOrder Details:\n- ${orderData.fishSize} Smoked Tilapia (${orderData.fishWeight})\n- Amount: GHS ${orderData.fishPrice}`;
+    }
+
+    successMessage += `\n\nYou will receive a confirmation SMS shortly.\nThank you for your order!`;
+
+    alert(successMessage);
 
     // Reset form
     setPaymentData({ email: '', amount: '', name: '', phone: '' });
@@ -280,6 +303,26 @@ const Contact = () => {
                 <FaMobileAlt /> Payment Details
               </h3>
 
+              {orderData.fishSize && (
+                <div style={{
+                  background: 'var(--cream)',
+                  padding: '1rem',
+                  borderRadius: 'var(--radius-md)',
+                  marginBottom: '1.5rem',
+                  border: '2px solid var(--primary-orange)'
+                }}>
+                  <p style={{ fontWeight: 'bold', color: 'var(--primary-orange)', marginBottom: '0.5rem' }}>
+                    Selected Order:
+                  </p>
+                  <p style={{ color: 'var(--charcoal)', marginBottom: '0.25rem' }}>
+                    <strong>Size:</strong> {orderData.fishSize} ({orderData.fishWeight})
+                  </p>
+                  <p style={{ color: 'var(--charcoal)', fontSize: '1.2rem', fontWeight: 'bold' }}>
+                    <strong>Amount:</strong> GHS {orderData.fishPrice}
+                  </p>
+                </div>
+              )}
+
               <div className="form-group">
                 <label htmlFor="payment-name">Full Name *</label>
                 <input
@@ -320,7 +363,10 @@ const Contact = () => {
               </div>
 
               <div className="form-group">
-                <label htmlFor="payment-amount">Amount (GHS) *</label>
+                <label htmlFor="payment-amount">
+                  Amount (GHS) *
+                  {orderData.fishPrice && <span style={{ color: 'var(--green)', marginLeft: '0.5rem', fontSize: '0.9rem' }}>✓ Pre-filled from your selection</span>}
+                </label>
                 <input
                   type="number"
                   id="payment-amount"
@@ -331,6 +377,11 @@ const Contact = () => {
                   min="1"
                   step="0.01"
                   required
+                  style={orderData.fishPrice ? {
+                    background: 'var(--cream)',
+                    borderColor: 'var(--primary-orange)',
+                    fontWeight: 'bold'
+                  } : {}}
                 />
               </div>
 
